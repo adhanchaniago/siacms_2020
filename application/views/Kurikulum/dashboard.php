@@ -666,6 +666,12 @@ if (in_array("39", $arrmenuakses)) {
         <li><a href="<?php echo site_url('kurikulum/pengaturanjadwaltambahan');?>">Pengaturan Jadwal Tambahan</a></li> 
       </ul>  <?php
     } ?>
+    <?php 
+    if (in_array("16", $arrmenuakses) && in_array("26", $arrmenuakses)) { ?>
+      <ul class="treeview-menu">
+        <li><a href="<?php echo site_url('kurikulum/pengaturanpresensisiswa');?>">Pengaturan Presensi Siswa</a></li> 
+      </ul> <?php
+    } ?>
 </li> 
 
 

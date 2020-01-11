@@ -40,7 +40,7 @@
                 <li><a href="#laporanpresensi" data-toggle="tab">Laporan Presensi Per Tahun</a></li>
                 <li><a href="#laporanpersemester" data-toggle="tab">Laporan Presensi Per Semester</a></li>
                 <?php if($this->session->userdata('jabatan') == 'Admin Presensi') : ?>
-                  <li><a href="#pengaturan" data-toggle="tab">Pengaturan</a></li>
+                  <!-- <li><a href="#pengaturan" data-toggle="tab">Pengaturan</a></li> -->
                 <?php endif; ?>
 
               </ul>

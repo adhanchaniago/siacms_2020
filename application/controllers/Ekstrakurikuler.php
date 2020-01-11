@@ -74,6 +74,24 @@ class Ekstrakurikuler extends CI_Controller {
 		$this->template->load('ekstrakurikuler/dashboard','ekstrakurikuler/gantipassword', $data);
 	}
 
+	public function pengaturanmengelolaektrakulikuler()
+    {
+        $data['nama'] = $this->session->Nama;
+        $data['foto'] = $this->session->foto;
+        $this->load->model('penjadwalan/Mod_pengaturan_ekstrakurikuler');
+        $data["check"] = $this->Mod_pengaturan_ekstrakurikuler->get_check();
+        $this->template->load('ekstrakurikuler/dashboard', 'kurikulum/pengaturanmengelolaektrakulikuler', $data);
+    }
+
+    public function pengaturan_ekstrakurikulersidebar()
+    {
+        $this->load->model('penjadwalan/Mod_pengaturan_ekstrakurikuler');
+        if (!empty($_POST)):
+            $this->Mod_pengaturan_ekstrakurikuler->update($_POST);
+        endif;
+        redirect('ekstrakurikuler/pengaturanmengelolaektrakulikuler');
+    }
+
 public function updatepassword() {
 		$username = $this->input->post('username',true);
 		$password = $this->input->post('password',true);

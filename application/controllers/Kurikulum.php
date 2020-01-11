@@ -74,6 +74,24 @@ class Kurikulum extends CI_Controller
         $this->template->load('kurikulum/dashboard', 'kurikulum/gantipassword', $data);
     }
 
+    public function pengaturanmengelolaektrakulikuler()
+    {
+        $data['nama'] = $this->session->Nama;
+        $data['foto'] = $this->session->foto;
+        $this->load->model('penjadwalan/Mod_pengaturan_ekstrakurikuler');
+        $data["check"] = $this->Mod_pengaturan_ekstrakurikuler->get_check();
+        $this->template->load('kurikulum/dashboard', 'kurikulum/pengaturanmengelolaektrakulikuler', $data);
+    }
+
+    public function pengaturan_ekstrakurikulersidebar()
+    {
+        $this->load->model('penjadwalan/Mod_pengaturan_ekstrakurikuler');
+        if (!empty($_POST)):
+            $this->Mod_pengaturan_ekstrakurikuler->update($_POST);
+        endif;
+        redirect('kurikulum/pengaturanmengelolaektrakulikuler');
+    }
+
     public function pengaturantambahmapel()
     {
         $data['nama'] = $this->session->Nama;
@@ -81,6 +99,27 @@ class Kurikulum extends CI_Controller
         $this->load->model('penjadwalan/mod_warna_mapel');
         $data['warna'] = $this->mod_warna_mapel->get();
         $this->template->load('kurikulum/dashboard', 'kurikulum/pengaturantambahmapel', $data);
+    }
+
+    public function pengaturanpresensisiswa()
+    {
+        $data['nama'] = $this->session->Nama;
+        $data['foto'] = $this->session->foto;
+        $this->load->model('penjadwalan/Mod_pengaturan_presensi');
+        $data["check"] = $this->Mod_pengaturan_presensi->get_check();
+        $this->template->load('kurikulum/dashboard', 'kurikulum/pengaturanpresensisiswa', $data);
+    }
+
+    public function pengaturan_presensisidebar()
+    {
+
+        $this->load->model('penjadwalan/Mod_pengaturan_presensi');
+
+        if (!empty($_POST)):
+            $this->Mod_pengaturan_presensi->update($_POST);
+        endif;
+
+        redirect('kurikulum/pengaturanpresensisiswa');
     }
 
     public function pengaturanmengelolamapel()

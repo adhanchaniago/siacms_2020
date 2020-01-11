@@ -635,7 +635,10 @@ if (in_array("39", $arrmenuakses)) {
     </span>
   </a>
   <ul class="treeview-menu">
-    <li><a href="<?php echo site_url('kurikulum/gantipassword');?>">Ganti Password</a></li> 
+    <li><a href="<?php echo site_url('ekstrakurikuler/gantipassword');?>">Ganti Password</a></li> 
+  </ul> 
+  <ul class="treeview-menu">
+    <li><a href="<?php echo site_url('ekstrakurikuler/pengaturanmengelolaektrakulikuler');?>">Pengaturan Mengelola Ektrakulikuler</a></li> 
   </ul> 
 </li> 
 

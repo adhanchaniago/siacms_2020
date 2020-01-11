@@ -26,7 +26,7 @@
             <?php if($this->session->userdata('jabatan') == 'Ekskul') : ?>
             <li class="<?php echo $this->session->flashdata('position_tab') == 4 ? 'active' : '' ?>"><a href="#data_jenis" data-toggle="tab">Jenis Ekstrakulikuler  </a></li>
             <?php endif ?>
-            <li class="<?php echo $this->session->flashdata('position_tab') == 3 ? 'active' : '' ?>"><a href="#pengaturan" data-toggle="tab">Pengaturan </a></li>
+            <!-- <li class="<?php echo $this->session->flashdata('position_tab') == 3 ? 'active' : '' ?>"><a href="#pengaturan" data-toggle="tab">Pengaturan </a></li> -->
           </ul>
 
           <div class="tab-content">
